@@ -1,5 +1,5 @@
 import numpy as np
-from typing import Dict, Tuple
+from typing import Tuple
 from .sir_sim import build_population, SUS, INF
 from .interventions import apply_intervention_step, cost_step
 
