@@ -24,30 +24,30 @@ This project implements a well-mixed agent-based SIR epidemic simulator where:
 
 ### Core Components
 
-1. **Agent-Based SIR Simulator** (`sir_sim.py`)
+1. **Agent-Based SIR Simulator** ([`sir_sim.py`](./src/sir_rl/sir_sim.py))
    - Well-mixed population dynamics
    - Per-contact transmission probability: `p_trans = 1 - exp(-β·dt)`
    - Per-step recovery probability: `p_rec = 1 - exp(-γ·dt)`
    - Configurable population size, initial conditions, and epidemic parameters
 
-2. **Intervention Framework** (`interventions.py`)
+2. **Intervention Framework** ([`interventions.py`](./src/sir_rl/interventions.py))
    - Two intervention types:
      - **Contact reduction**: Reduces the number of contacts per infectious agent
      - **Transmission reduction**: Reduces the transmission rate β
    - Cost function balancing epidemiological impact and social costs
 
-3. **Reinforcement Learning Agent** (`rl_agent.py`)
+3. **Reinforcement Learning Agent** ([`rl_agent.py`](./src/sir_rl/rl_agent.py))
    - Tabular Q-learning implementation
    - State discretization based on susceptible/infectious fractions and time
    - Action space: intervention levels [0.0, 0.25, 0.5, 0.75, 1.0]
    - Epsilon-greedy exploration with decay
 
-4. **Empirical R₀ Estimation** (`experiments.py`)
+4. **Empirical R₀ Estimation** ([`experiments.py`](./src/sir_rl/experiments.py))
    - Index-case method for estimating basic reproduction number
    - Beta parameter sweep functionality
    - Statistical aggregation across multiple runs
 
-5. **Visualization Utilities** (`utils.py`)
+5. **Visualization Utilities** ([`utils.py`](./src/sir_rl/utils.py))
    - SIR dynamics plotting
    - Training curve visualization with moving averages
 
@@ -164,11 +164,11 @@ pytest tests/
 ## Reproducibility
 
 - **Python Version**: 3.10+
-- **Random Seed**: 42 (configurable in `config.py` and notebook)
-- **Dependencies**: Pinned in `requirements.txt`
+- **Random Seed**: 42 (configurable in [`config.py`](./src/sir_rl/config.py) and notebook)
+- **Dependencies**: Pinned in [`requirements.txt`](./requirements.txt)
 - **Reproduction Steps**:
   1. Create environment and install requirements
-  2. Open `notebooks/ABS_RL.ipynb`
+  2. Open [`notebooks/ABS_RL.ipynb`](./notebooks/ABS_RL.ipynb)
   3. Run cells sequentially from top to bottom
   4. For experimental sweeps, use fixed seed offsets and average across independent runs
 
@@ -221,7 +221,6 @@ See LICENSE file for details.
 
 ## References
 
-- Guidelines and implementation details: See `Guidelines.md`
 - SIR model: Kermack & McKendrick (1927)
 - Q-learning: Watkins & Dayan (1992)
 
@@ -238,7 +237,7 @@ Potential enhancements:
 
 # Part 2: Conformal Prediction for Classification
 
-This project implements conformal classification methods for providing prediction sets with guaranteed coverage properties. All tasks from the assignment (`Assignment.md`) have been completed.
+This project implements conformal classification methods for providing prediction sets with guaranteed coverage properties. All tasks from the assignment ([`Assignment.md`](Assignment.md)) have been completed.
 
 ## Completed Tasks
 
@@ -247,8 +246,8 @@ This project implements conformal classification methods for providing predictio
 **Status**: Complete
 
 **Implementation**: 
-- Inductive (split) conformal classification implemented in `notebooks/Conformal_Classification.ipynb`
-- Evaluation across 10+ two-class datasets from the `twoclass/` folder
+- Inductive (split) conformal classification implemented in [`notebooks/Conformal_Classification.ipynb`](./notebooks/Conformal_Classification.ipynb)
+- Evaluation across 10+ two-class datasets from the [`twoclass/`](./twoclass/) folder
 - Three base models: Random Forest, Decision Tree, and XGBoost
 - 10-fold cross-validation
 - Three significance levels tested: ε = 0.05, 0.10, 0.20 (95%, 90%, 80% confidence)
@@ -270,7 +269,7 @@ This project implements conformal classification methods for providing predictio
 
 **Implementation**: 
 - Class-conditional conformal prediction (CCCP) using Mondrian approach
-- Module: `src/conformal/task2_evaluation.py`
+- Module: [`src/conformal/task2_evaluation.py`](./src/conformal/task2_evaluation.py)
 - Provides independent coverage guarantees for each class
 
 **Features**:
@@ -289,7 +288,7 @@ This project implements conformal classification methods for providing predictio
 
 **Implementation**:
 - Difficulty-based Mondrian categories using entropy estimation
-- Module: `src/conformal/task3_normalized.py`
+- Module: [`src/conformal/task3_normalized.py`](./src/conformal/task3_normalized.py)
 - Instance-specific predictions based on difficulty
 
 **Features**:
@@ -309,7 +308,7 @@ This project implements conformal classification methods for providing predictio
 
 **Implementation**:
 - Conformal classification trees with interpretable decision structure
-- Module: `src/conformal/task4_interpretable.py`
+- Module: [`src/conformal/task4_interpretable.py`](./src/conformal/task4_interpretable.py)
 - Class: `ConformalClassificationTree`
 
 **Features**:
@@ -382,11 +381,11 @@ The conformal prediction tasks require:
 - `matplotlib` (for visualizations)
 - `numpy` (for numerical operations)
 
-All dependencies are included in `requirements.txt`.
+All dependencies are included in [`requirements.txt`](./requirements.txt).
 
 ## References
 
 - **Conformal Prediction**: Vovk, Gammerman, and Shafer (2005)
 - **Mondrian Conformal Prediction**: Vovk, Nouretdinov, and Gammerman (2005)
-- **Assignment Details**: See `Assignment.md`
+- **Assignment Details**: See [`Assignment.md`](./Assignment.md)
 
