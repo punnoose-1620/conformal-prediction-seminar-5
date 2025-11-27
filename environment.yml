@@ -1,0 +1,12 @@
+name: sir_rl
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - matplotlib
+  - tqdm
+  - numba
+  - scipy
+  - pytest
+  - jupyterlab
